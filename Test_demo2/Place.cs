@@ -11,7 +11,6 @@ namespace Test_demo2
         public int Id;
         public string Name;
         public int Price;
-        public int Price1;
 
     }
 }
