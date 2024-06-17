@@ -2,5 +2,7 @@
 {
     internal class Test_class
     {
+        int balls;
+        int baba;
     }
 }
