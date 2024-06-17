@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel0 = new Panel();
-            id0 = new Label();
-            place0 = new Label();
-            date0 = new Label();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            выбратьToolStripMenuItem = new ToolStripMenuItem();
             status0 = new Label();
+            date0 = new Label();
+            place0 = new Label();
+            id0 = new Label();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
@@ -59,7 +62,11 @@
             place4 = new Label();
             id4 = new Label();
             Make_request_btn = new Button();
+            next_page = new Button();
+            prev_page = new Button();
+            pageSetupDialog1 = new PageSetupDialog();
             panel0.SuspendLayout();
+            contextMenuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -68,6 +75,7 @@
             // 
             // panel0
             // 
+            panel0.ContextMenuStrip = contextMenuStrip1;
             panel0.Controls.Add(status0);
             panel0.Controls.Add(date0);
             panel0.Controls.Add(place0);
@@ -77,25 +85,28 @@
             panel0.Size = new Size(689, 60);
             panel0.TabIndex = 0;
             // 
-            // id0
+            // contextMenuStrip1
             // 
-            id0.AutoSize = true;
-            id0.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            id0.Location = new Point(3, 18);
-            id0.Name = "id0";
-            id0.Size = new Size(121, 21);
-            id0.TabIndex = 0;
-            id0.Text = "Номер заявки";
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { выбратьToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(122, 26);
             // 
-            // place0
+            // выбратьToolStripMenuItem
             // 
-            place0.AutoSize = true;
-            place0.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            place0.Location = new Point(160, 18);
-            place0.Name = "place0";
-            place0.Size = new Size(59, 21);
-            place0.TabIndex = 1;
-            place0.Text = "Место";
+            выбратьToolStripMenuItem.Name = "выбратьToolStripMenuItem";
+            выбратьToolStripMenuItem.Size = new Size(121, 22);
+            выбратьToolStripMenuItem.Text = "Выбрать";
+            выбратьToolStripMenuItem.Click += выбратьToolStripMenuItem_Click;
+            // 
+            // status0
+            // 
+            status0.AutoSize = true;
+            status0.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            status0.Location = new Point(583, 18);
+            status0.Name = "status0";
+            status0.Size = new Size(60, 21);
+            status0.TabIndex = 3;
+            status0.Text = "Статус";
             // 
             // date0
             // 
@@ -107,15 +118,25 @@
             date0.TabIndex = 2;
             date0.Text = "Дата";
             // 
-            // status0
+            // place0
             // 
-            status0.AutoSize = true;
-            status0.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            status0.Location = new Point(583, 18);
-            status0.Name = "status0";
-            status0.Size = new Size(60, 21);
-            status0.TabIndex = 3;
-            status0.Text = "Статус";
+            place0.AutoSize = true;
+            place0.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            place0.Location = new Point(160, 18);
+            place0.Name = "place0";
+            place0.Size = new Size(59, 21);
+            place0.TabIndex = 1;
+            place0.Text = "Место";
+            // 
+            // id0
+            // 
+            id0.AutoSize = true;
+            id0.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            id0.Location = new Point(3, 18);
+            id0.Name = "id0";
+            id0.Size = new Size(121, 21);
+            id0.TabIndex = 0;
+            id0.Text = "Номер заявки";
             // 
             // label5
             // 
@@ -169,6 +190,7 @@
             // 
             // panel1
             // 
+            panel1.ContextMenuStrip = contextMenuStrip1;
             panel1.Controls.Add(status1);
             panel1.Controls.Add(date1);
             panel1.Controls.Add(place1);
@@ -220,6 +242,7 @@
             // 
             // panel2
             // 
+            panel2.ContextMenuStrip = contextMenuStrip1;
             panel2.Controls.Add(status2);
             panel2.Controls.Add(date2);
             panel2.Controls.Add(place2);
@@ -271,6 +294,7 @@
             // 
             // panel3
             // 
+            panel3.ContextMenuStrip = contextMenuStrip1;
             panel3.Controls.Add(status3);
             panel3.Controls.Add(date3);
             panel3.Controls.Add(place3);
@@ -322,6 +346,7 @@
             // 
             // panel4
             // 
+            panel4.ContextMenuStrip = contextMenuStrip1;
             panel4.Controls.Add(status4);
             panel4.Controls.Add(date4);
             panel4.Controls.Add(place4);
@@ -380,12 +405,34 @@
             Make_request_btn.Text = "Оформить заявку";
             Make_request_btn.UseVisualStyleBackColor = true;
             // 
+            // next_page
+            // 
+            next_page.Location = new Point(626, 401);
+            next_page.Name = "next_page";
+            next_page.Size = new Size(75, 23);
+            next_page.TabIndex = 8;
+            next_page.Text = "Вперёд";
+            next_page.UseVisualStyleBackColor = true;
+            next_page.Click += next_page_Click;
+            // 
+            // prev_page
+            // 
+            prev_page.Location = new Point(527, 401);
+            prev_page.Name = "prev_page";
+            prev_page.Size = new Size(75, 23);
+            prev_page.TabIndex = 9;
+            prev_page.Text = "Назад";
+            prev_page.UseVisualStyleBackColor = true;
+            prev_page.Click += prev_page_Click;
+            // 
             // Request_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 192, 192);
             ClientSize = new Size(713, 443);
+            Controls.Add(prev_page);
+            Controls.Add(next_page);
             Controls.Add(Make_request_btn);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -405,6 +452,7 @@
             Load += Request_form_Load;
             panel0.ResumeLayout(false);
             panel0.PerformLayout();
+            contextMenuStrip1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -450,5 +498,10 @@
         private Label place4;
         private Label id4;
         private Button Make_request_btn;
+        private Button next_page;
+        private Button prev_page;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem выбратьToolStripMenuItem;
+        private PageSetupDialog pageSetupDialog1;
     }
 }

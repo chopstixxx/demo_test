@@ -65,5 +65,10 @@ namespace Test_demo2
             this.Hide();
             form.Show();
         }
+
+        private void Auth_form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

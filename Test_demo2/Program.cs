@@ -14,7 +14,7 @@ namespace Test_demo2
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=demo2;User Id=postgres;Password=123");
-            Application.Run(new Create_request_form(conn));
+            Application.Run(new Master_form());
         }
     }
 }
