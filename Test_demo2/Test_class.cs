@@ -4,6 +4,7 @@
     {
         int balls;
         int baba;
+        int bal;
        
     }
 }
